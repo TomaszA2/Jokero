@@ -17,7 +17,9 @@ async def on_ready():
 async def on_message(message):
     if message.author.nick == "Joseph":
         tmp = await client.send_message(message.channel, 'Yare Yare Daze.')
-    if "Dio" in message.content.lower():
-        tmp = await client.send_message(message.channel, 'Dio, you bastard!')
+    if message.author != client.user:
+        if "dio" in message.content.lower():
+            tmp = await client.send_message(message.channel, 'Dio, you bastard!')
+    
         
 client.run(os.getenv('TOKEN'))
